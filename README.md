@@ -4,6 +4,8 @@
 
 Optimize images and convert them to the modern WebP format with a neon cyberpunk flair, entirely within your web browser. ShrinkRay processes images locally, ensuring your privacy and security.
 
+# [Live Preview](https://n1ghtw1re.neocities.org/tools/shrinkray)
+
  ![ShrinkRay Demo](shrinkray_screenshot.png)
 
 ## Overview
