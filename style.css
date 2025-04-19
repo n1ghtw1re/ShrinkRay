@@ -1,0 +1,236 @@
+:root {
+    --background-dark: #0d0221; /* Deep space blue/purple */
+    --background-medium: #2d1450; /* Slightly lighter purple */
+    --neon-pink: #ff00f2;
+    --neon-cyan: #00f0ff;
+    --neon-green: #39ff14;
+    --text-light: #f0f0f0;
+    --glow-intensity: 0 0 5px, 0 0 10px, 0 0 15px; /* Adjusted glow intensity */
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-light);
+    font-family: 'Orbitron', sans-serif;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-size: 16px; /* Base font size */
+}
+
+.container {
+    background-color: rgba(45, 20, 80, 0.6); /* Semi-transparent background */
+    border: 1px solid var(--neon-cyan);
+    box-shadow: var(--glow-intensity) var(--neon-cyan);
+    padding: 30px 40px;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 90%;
+    text-align: center;
+    backdrop-filter: blur(5px); /* Optional: frosted glass effect */
+}
+
+header h1 {
+    color: var(--text-light);
+    font-size: 2.5em; /* Larger heading */
+    margin-bottom: 10px;
+    text-shadow: var(--glow-intensity) rgba(255, 255, 255, 0.3);
+}
+
+header h1 .highlight {
+    color: var(--neon-pink);
+    text-shadow: var(--glow-intensity) var(--neon-pink);
+}
+
+header p {
+    color: var(--neon-cyan);
+    margin-bottom: 30px;
+    font-size: 1em;
+}
+
+.upload-area {
+    border: 3px dashed var(--neon-pink);
+    padding: 40px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom: 20px;
+    background-color: rgba(0, 0, 0, 0.2);
+}
+
+.upload-area.highlight-drag {
+    background-color: rgba(255, 0, 242, 0.1);
+    border-color: var(--neon-green);
+    box-shadow: inset 0 0 15px var(--neon-pink), var(--glow-intensity) var(--neon-green);
+}
+
+.upload-area:hover {
+    background-color: rgba(255, 0, 242, 0.05);
+    border-color: var(--neon-cyan);
+    box-shadow: inset 0 0 10px var(--neon-pink), var(--glow-intensity) var(--neon-cyan);
+}
+
+
+#upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    color: var(--neon-cyan);
+}
+
+#upload-label svg {
+    fill: var(--neon-cyan);
+    margin-bottom: 15px;
+    width: 50px;
+    height: auto;
+    filter: drop-shadow(0 0 5px var(--neon-cyan));
+    transition: filter 0.3s ease;
+}
+
+#upload-label:hover svg {
+     filter: drop-shadow(0 0 10px var(--neon-pink));
+     fill: var(--neon-pink);
+}
+
+#upload-label strong {
+    color: var(--neon-pink);
+    display: block; /* Ensure it takes its own line or space */
+    margin-bottom: 5px; /* Space between "Choose.." and "or drag.." */
+}
+
+
+#status-message {
+    margin-top: 15px;
+    color: var(--neon-green);
+    font-weight: bold;
+    min-height: 1.2em; /* Prevent layout shift */
+}
+
+.result-area {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--neon-green);
+    box-shadow: var(--glow-intensity) var(--neon-green);
+    margin-top: 20px;
+}
+
+.result-area h2 {
+    color: var(--neon-green);
+    text-shadow: var(--glow-intensity) var(--neon-green);
+    margin-bottom: 20px;
+}
+
+.stats p {
+    margin: 10px 0;
+    font-size: 1.1em;
+    color: var(--text-light);
+}
+
+.stats .highlight {
+    color: var(--neon-cyan);
+    font-weight: bold;
+}
+
+.stats .highlight-strong {
+    color: var(--neon-green);
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.download-button, .reset-button {
+    display: inline-block;
+    background-color: transparent;
+    border: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+    padding: 12px 25px;
+    margin-top: 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-family: 'Orbitron', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
+    text-shadow: 0 0 5px var(--neon-pink);
+    box-shadow: inset 0 0 8px rgba(255, 0, 242, 0.5), 0 0 10px rgba(255, 0, 242, 0.5);
+}
+
+.download-button:hover, .reset-button:hover {
+    background-color: var(--neon-pink);
+    color: var(--background-dark);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), var(--glow-intensity) var(--neon-pink);
+    text-shadow: none;
+}
+
+.reset-button {
+    border-color: var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px var(--neon-cyan);
+    box-shadow: inset 0 0 8px rgba(0, 240, 255, 0.5), 0 0 10px rgba(0, 240, 255, 0.5);
+    margin-left: 15px;
+}
+
+.reset-button:hover {
+    background-color: var(--neon-cyan);
+    color: var(--background-dark);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5), var(--glow-intensity) var(--neon-cyan);
+}
+
+
+footer {
+    margin-top: 30px;
+    font-size: 0.8em;
+    color: #aaa; /* Less prominent footer text */
+}
+
+/* Hide elements */
+[hidden] {
+    display: none !important;
+}
+/* Add these styles to your existing style.css */
+
+.limit-info {
+    display: block;
+    font-size: 0.8em;
+    color: var(--neon-cyan);
+    margin-top: 8px;
+    opacity: 0.8;
+}
+
+/* Optional: Adjust spacing if result summary is added */
+#result-summary {
+    margin-bottom: 20px;
+    color: var(--text-light);
+}
+
+/* Style for processing multiple files status */
+#status-message.processing {
+    color: var(--neon-green);
+    font-weight: bold;
+}
+
+/* Style for error status */
+#status-message.error {
+    color: var(--neon-pink);
+    font-weight: bold;
+}
+
+/* Ensure result area text is readable */
+.result-area p {
+     color: var(--text-light);
+     margin-bottom: 15px;
+}
+
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: var(--glow-intensity) var(--neon-green); }
+    50% { box-shadow: 0 0 8px var(--neon-green), 0 0 15px var(--neon-green), 0 0 25px var(--neon-green); }
+}
+
+.container.processing { /* Add this class via JS when processing starts */
+    border-color: var(--neon-green);
+    animation: pulse-glow 1.5s infinite ease-in-out;
+}
